@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Youtube link editor</title>
+</head>
+<body><center><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+Timecode1:<input id="youtube1" style="font-size:20pt;height:36px;width:400px;" autocomplete="off" onClick="this.select();"/>
+Timecode2:<input id="youtube2" style="font-size:20pt;height:36px;width:400px;" autocomplete="off" onClick="this.select();"/>
+<button type="submit" id="save" style="font-size:13pt;height:24px;" onClick="edit()">Submit</button>
+<br><br><br><br>
+<input id="result" style="font-size:27pt;height:40px;width:1200px;" autocomplete="off" onClick="this.select();"/>
+<script>
+    function edit(){
+    edit1 = document.getElementById('youtube1').value
+    edit2 = document.getElementById('youtube2').value
+
+    editP1 = edit1.replace("https://youtu.be/", "https://www.youtube.com/embed/");
+    editP2 = editP1.replace("?t=", "?start=");
+
+    function getSecondPart(str) {
+    return str.split('?t=')[1];
+    }
+
+
+    editP3 = document.getElementById('youtube2').value
+    editP4 = getSecondPart(editP3)
+    document.getElementById('result').value = editP2 + '&end=' + editP4
+}
+</script>
+</center>
+</body>
+</html>
