@@ -19,11 +19,17 @@ Timecode2:<input id="youtube2" style="font-size:20pt;height:36px;width:400px;" a
     function getSecondPart(str) {
     return str.split('?t=')[1];
     }
-
-
     editP3 = document.getElementById('youtube2').value
     editP4 = getSecondPart(editP3)
     document.getElementById('result').value = editP2 + '&end=' + editP4
+
+    function copyToClipboard() {
+    var textBox = document.getElementById("result");
+    textBox.select();
+    document.execCommand("copy");
+
+}
+copyToClipboard()
 }
 </script>
 </center>
